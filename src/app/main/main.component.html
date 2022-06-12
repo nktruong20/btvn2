@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-5">
+        <button class="btn btn-info" style="margin-bottom: 20px;" routerLink="/add">Thêm Mới +</button>
+    </div>
+    <div class="col-md-7">
+        <h2>Danh sách sinh viên</h2>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Avatar</th>
+            <th>Detail</th>
+            <th>Delete</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listBlog">
+            <td scope="row">{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td><img src="{{item.avatar}}" alt="" width="150px"></td>
+            <td><button class="btn btn-success" routerLink="/detail/{{item.id}}">Chi Tiết</button></td>
+            <td><button class="btn btn-danger" (click)="delete(item.id)">Xoá</button></td>
+        </tr>
+       
+    </tbody>
+</table>
